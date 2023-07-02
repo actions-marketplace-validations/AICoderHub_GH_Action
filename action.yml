@@ -17,6 +17,9 @@ inputs:
   TEMPLATE_FILES:
     description: 'Template files for file-generator mode'
     required: false
+  FINAL_FILE_PATH:
+    description: 'Final file path to create for file-generator mode'
+    required: false
   CHECK_PATHS:
     description: 'Path to file/folder to modify'
     required: false
@@ -51,6 +54,7 @@ runs:
         INPUT_OPENAI_API_KEY: ${{ inputs.INPUT_OPENAI_API_KEY }}
         INPUT_MODEL: ${{ inputs.INPUT_MODEL }}
         TEMPLATE_FILES: ${{ inputs.TEMPLATE_FILES }}
+        FINAL_FILE_PATH: ${{ inputs.FINAL_FILE_PATH }}
         ORIGIN_BRANCH: ${{ inputs.ORIGIN_BRANCH }}
         TO_BRANCH: ${{ inputs.TO_BRANCH }}
         CHECK_PATHS: ${{ inputs.CHECK_PATHS }}
