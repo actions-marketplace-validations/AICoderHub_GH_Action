@@ -39,10 +39,11 @@ The action takes the following inputs:
 - `ORIGIN_BRANCH` (required): The origin branch to checkout.
 - `TO_BRANCH` (required): The branch to commit changes.
 - `CHECK_PATH` (optional): The file/folder path to check and apply changes.
+- `GITHUB_TOKEN` (required): The GitHub token to use for authentication.
 
 *Only one of `CHECK_PATH` or `TEMPLATE_FILES` must be provided.*
 
-## Examples
+## Examples Calling AICoder Actino
 
 *The following examples use the path to a file, but note that the path can also be a folder and therefore every file inside the folder will be used.*
 
@@ -62,6 +63,7 @@ The action takes the following inputs:
     ORIGIN_BRANCH: 'aicoder'
     TO_BRANCH: 'main'
     CHECK_PATH: '/path/to/file/to/modify'
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 A PR will be generated with the changes.
@@ -81,6 +83,7 @@ A PR will be generated with the changes.
     ORIGIN_BRANCH: 'aicoder'
     TO_BRANCH: 'main'
     CHECK_PATH: '/path/to/file/to/modify'
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 A PR will be generated with the recommended changes.
@@ -101,6 +104,7 @@ A PR will be generated with the recommended changes.
     ORIGIN_BRANCH: 'aicoder'
     TO_BRANCH: 'main'
     CHECK_PATH: '/path/to/file/to/modify'
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 A PR will be generated with the recommended changes.
@@ -120,6 +124,7 @@ A PR will be generated with the recommended changes.
     ORIGIN_BRANCH: 'aicoder'
     TO_BRANCH: 'main'
     CHECK_PATH: '/path/to/file/to/modify'
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 A PR will be generated with the recommended changes.
@@ -165,3 +170,5 @@ A PR will be generated with the recommended changes.
 A PR will be generated with the recommended changes.
 
 </details>
+
+### Examples of Triggers
