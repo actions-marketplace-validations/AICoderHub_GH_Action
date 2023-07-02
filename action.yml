@@ -26,6 +26,9 @@ inputs:
   TO_BRANCH:
     description: 'Branch to commit changes'
     required: true
+  GITHUB_TOKEN:
+    description: 'Github Token to use to send a commit and create a PR'
+    required: true
 runs:
   using: 'composite'
   steps:
