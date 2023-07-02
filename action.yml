@@ -36,13 +36,6 @@ runs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: Checkout or create branch
-      shell: bash
-      run: |
-        git fetch origin
-        git checkout ${BRANCH_NAME} || git checkout -b ${BRANCH_NAME}
-      env:
-        BRANCH_NAME: ${{ inputs.ORIGIN_BRANCH }}
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
