@@ -16,13 +16,17 @@ Here is a sample step:
     INPUT_PROMPT: 'desired-prompt'
     INPUT_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     INPUT_MODEL: 'gpt-4'
-    TEMPLATE_FILES: '/path/to/template/file1 /path/to/template/file2'
+    TEMPLATE_FILES: '/path/to/template/file1,/path/to/template/file2'
     ORIGIN_BRANCH: 'aicoder'
     TO_BRANCH: 'main'
-    CHECK_PATH: '/path/to/file/to/modify'
+    CHECK_PATHS: '/path/to/file/to/modify1,/path/to/file/to/modify1'
 ```
 
 The allowed modes are: `file-enhancer`, `file-generator`, `file-security`, `file-optimizer`, `file-comments`, `file-bugfixer`.
+
+**Note** that the prompt can be a string, a file path (I'll need to be inside the repo) or a URL.
+
+Remember that both `TEMPLATE_FILES` and `CHECK_PATHSS` are a list of paths separated by commas.
 
 ## Requirements
 
@@ -38,10 +42,10 @@ The action takes the following inputs:
 - `TEMPLATE_FILES` (optional): The template files for file-generator mode.
 - `ORIGIN_BRANCH` (required): The origin branch to checkout.
 - `TO_BRANCH` (required): The branch to commit changes.
-- `CHECK_PATH` (optional): The file/folder path to check and apply changes.
+- `CHECK_PATHSS` (optional): The file(s)/folder(s) path to check and apply changes (if a folder, every file inside of it will be checked).
 - `GITHUB_TOKEN` (required): The GitHub token to use for authentication.
 
-*Only one of `CHECK_PATH` or `TEMPLATE_FILES` must be provided.*
+*Only one of `CHECK_PATHS` or `TEMPLATE_FILES` must be provided.*
 
 ## Examples Calling AICoder Actino
 
@@ -49,8 +53,6 @@ The action takes the following inputs:
 
 <details>
   <summary>Modify a code based on a custom prompt</summary>
-  
-**Note** that the prompt can be a string, a file path (I'll need to be inside the repo) or a URL.
 
 ```yaml
 - name: AICoder GH Action
@@ -62,7 +64,7 @@ The action takes the following inputs:
     INPUT_MODEL: 'gpt-4'
     ORIGIN_BRANCH: 'aicoder'
     TO_BRANCH: 'main'
-    CHECK_PATH: '/path/to/file/to/modify'
+    CHECK_PATHS: '/path/to/file/to/modify'
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
@@ -82,7 +84,7 @@ A PR will be generated with the changes.
     INPUT_MODEL: 'gpt-4'
     ORIGIN_BRANCH: 'aicoder'
     TO_BRANCH: 'main'
-    CHECK_PATH: '/path/to/file/to/modify'
+    CHECK_PATHS: '/path/to/file/to/modify'
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
@@ -103,7 +105,7 @@ A PR will be generated with the recommended changes.
     INPUT_MODEL: 'gpt-4'
     ORIGIN_BRANCH: 'aicoder'
     TO_BRANCH: 'main'
-    CHECK_PATH: '/path/to/file/to/modify'
+    CHECK_PATHS: '/path/to/file/to/modify'
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
@@ -123,7 +125,7 @@ A PR will be generated with the recommended changes.
     INPUT_MODEL: 'gpt-4'
     ORIGIN_BRANCH: 'aicoder'
     TO_BRANCH: 'main'
-    CHECK_PATH: '/path/to/file/to/modify'
+    CHECK_PATHS: '/path/to/file/to/modify'
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
@@ -143,7 +145,7 @@ A PR will be generated with the recommended changes.
     INPUT_MODEL: 'gpt-4'
     ORIGIN_BRANCH: 'aicoder'
     TO_BRANCH: 'main'
-    CHECK_PATH: '/path/to/file/to/modify'
+    CHECK_PATHS: '/path/to/file/to/modify'
 ```
 
 A PR will be generated with the recommended changes.
@@ -164,7 +166,7 @@ A PR will be generated with the recommended changes.
     TEMPLATE_FILES: '/path/to/template/file1 /path/to/template/file2'
     ORIGIN_BRANCH: 'aicoder'
     TO_BRANCH: 'main'
-    CHECK_PATH: '/path/to/file/to/create'
+    CHECK_PATHS: '/path/to/file/to/create'
 ```
 
 A PR will be generated with the recommended changes.

@@ -17,7 +17,7 @@ inputs:
   TEMPLATE_FILES:
     description: 'Template files for file-generator mode'
     required: false
-  CHECK_PATH:
+  CHECK_PATHS:
     description: 'Path to file/folder to modify'
     required: false
   ORIGIN_BRANCH:
@@ -53,7 +53,7 @@ runs:
         TEMPLATE_FILES: ${{ inputs.TEMPLATE_FILES }}
         ORIGIN_BRANCH: ${{ inputs.ORIGIN_BRANCH }}
         TO_BRANCH: ${{ inputs.TO_BRANCH }}
-        CHECK_PATH: ${{ inputs.CHECK_PATH }}
+        CHECK_PATHS: ${{ inputs.CHECK_PATHS }}
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
       shell: bash
 
