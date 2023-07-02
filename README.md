@@ -10,7 +10,7 @@ Here is a sample step:
 
 ```yaml
 - name: AICoder GH Action
-  uses: AICoderHub/GH_Action@v1
+  uses: AICoderHub/GH_Action@v1.1
   with:
     INPUT_MODE: 'desired-mode'
     INPUT_PROMPT: 'desired-prompt'
