@@ -49,5 +49,6 @@ runs:
         ORIGIN_BRANCH: ${{ inputs.ORIGIN_BRANCH }}
         TO_BRANCH: ${{ inputs.TO_BRANCH }}
         CHECK_PATH: ${{ inputs.CHECK_PATH }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       shell: bash
 
