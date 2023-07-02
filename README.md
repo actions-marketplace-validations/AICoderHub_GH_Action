@@ -10,7 +10,7 @@ Here is a sample step:
 
 ```yaml
 - name: AICoder GH Action
-  uses: AICoderHub/GH_Action@v0.5
+  uses: AICoderHub/GH_Action@v0.11
   with:
     INPUT_MODE: 'desired-mode'
     INPUT_PROMPT: 'desired-prompt'
@@ -170,5 +170,3 @@ A PR will be generated with the recommended changes.
 A PR will be generated with the recommended changes.
 
 </details>
-
-### Examples of Triggers
